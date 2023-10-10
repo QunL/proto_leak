@@ -1,7 +1,7 @@
 import psutil
 import os
 import datetime
-from schema_pb2 import value_test_topic
+from schema_4_21_1_pb2 import value_test_topic
 
 process = psutil.Process(os.getpid())
 
@@ -12,7 +12,7 @@ print("Memory consumed at the beginning", get_rss_MB())
 
 lst = value_test_topic()
 while(1):
-    for _ in range(1000000):
+    for _ in range(10000):
         event_dt = datetime.datetime.utcnow()
         lst.myField1 = 1234567
         lst.myField2 = event_dt.timestamp()
